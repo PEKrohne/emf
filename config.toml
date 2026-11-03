@@ -1,0 +1,49 @@
+[entry_field_control]
+clear_worker_id = false
+clear_emf_tester_id = false
+clear_sensor_id = true
+
+[visualisation]
+show_cg_table = false
+
+[measurement]
+duration_seconds = 5
+expected_value = 3.545
+# Tolerance is represented in percent.
+tolerance = 1
+show_boundaries = true
+
+[sensor_config]
+# Enter sensor type of the tested device. E. g. BATCHFLUX or DN100If BATCHFLUX is selected the sensor will be reseted to a pre-calibration state
+sensor_type = "DN100"
+
+[plotting]
+time_window = 10
+y_lim_margin = 2
+mean_samples = 20
+
+[usb_device]
+device_description = "KROHNE OPTIBRIDGE 1010"
+pid = "&VID_12F0&PID_0070"
+last_com_port = "COM14"
+auto_connect = true
+
+[scanner]
+device_description = ""
+pid = "&VID_0C2E&PID_1014"
+last_com_port = "COM13"
+auto_connect = true
+
+[database]
+host = "localhost"
+port = 1433
+database = "PDB"
+username = "emf_tester"
+# DPAPI-encrypted, only readable on this machine. Do not edit by hand - use the DB connection dialog instead.
+encrypted_password = ""
+
+[user_input_key]
+# Following values are used as Regex. Use \\ as escape sequence
+sensor_sn_key = "\\A(Order-ID)"
+emf_tester_id = "\\A(EMF_Tester-ID)"
+worker_id = "\\A(Worker-ID)"
